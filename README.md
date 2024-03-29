@@ -1,11 +1,11 @@
 ## Tinyllama Bitnet
 This repository demonstrates training your own BitNet model based on the llama2 architecture. Unedited, the script will train a ~84M param model on ~1.5B tokens.
 #### File structure
-train.py - the entire training process including preparing the data, defining the model architecture, and training model.
+**train.py** - the entire training process including preparing the data, defining the model architecture, and training model.
 
-utils.py - contains the BitLinear implementation, and convert_to_bitnet function for converting huggingface's LlamaForCausalLM to BitNet.
+**utils.py** - contains the BitLinear implementation, and convert_to_bitnet function for converting huggingface's LlamaForCausalLM to BitNet.
 
-inference.py - run inference with a trained BitNet model.
+**inference.py** - run inference with a trained BitNet model.
 
 I wanted to make this process as straight forward and hackable as possible, so all of these scripts are minimal and easily adjustable.
 #### Training Data
