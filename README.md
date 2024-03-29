@@ -1,6 +1,13 @@
 ## Tinyllama Bitnet
 This repository demonstrates training a small ~84M param BitNet model based on the llama2 architecture.
-The entire process including preparing the data, defining the model architecture, and training the model is available in train.py. I wanted to make this process as straight-forward and hackable as possible.
+#### File structure
+train.py - the entire training process including preparing the data, defining the model architecture, and training model.
+
+utils.py - contains the BitLinear implementation, and convert_to_bitnet function for converting huggingface's LlamaForCausalLM to BitNet.
+
+inference.py - run inference with a trained BitNet model.
+
+I wanted to make this process as straight forward and hackable as possible, so all of these scripts are minimal and easily adjustable.
 #### Training Data
 The script currently uses a 15% subset of openwebtext2 for training. This has been pretokenized at a context length of 256 for ease of testing, but code is also included to tokenize data yourself.
 You can replace a couple lines in the script to train on pretty much anything else you want.
