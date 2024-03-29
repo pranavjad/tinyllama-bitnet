@@ -85,14 +85,6 @@ print(f"Model size: {model_size/1000**2:.1f}M parameters")
 tokenizer.pad_token = tokenizer.eos_token
 data_collator = DataCollatorForLanguageModeling(tokenizer, mlm=False)
 
-
-batch_size = int(400)
-steps = tokenized_data['train'].num_rows / batch_size
-grad_accum_steps = 100_000 / 256 / batch_size
-print(f"Batch Size: {batch_size} rows, {(batch_size * context_length):_} toks")
-print(f"Steps: {int(steps):_}")
-print(f"Gradient Accumulation Steps: {grad_accum_steps}")
-
 ### Set up training arguments and begin training. Adjust these to your needs.
 # Adjust the batch size until you can train on your device. Then increase accumulation steps to satisfy the following:
 # tokens per batch = per_device_train_batch_size * gradient_accumulation_steps * 256
