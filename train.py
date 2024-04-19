@@ -45,10 +45,10 @@ login(token=hf_token)
 ### Load pretokenized data (15% of openwebtext tokenized for ctx len of 256, ~1.5B tokens)
 # You can subset this even further if you want a smaller dataset.
 
-context_length = 256
 tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-hf")
 tokenized_data = load_dataset("xz56/openwebtext-tokenized-small")
 
+context_length = 256
 total_tokens = tokenized_data['train'].num_rows * context_length
 print(f"Training on {total_tokens:_} tokens")
 
@@ -79,7 +79,7 @@ convert_to_bitnet(model, copy_weights=False)
 
 ### Print number of parameters.
 model_size = sum(t.numel() for t in model.parameters())
-print(f"Model size: {model_size/1000**2:.1f}M parameters")
+print(f"Model size: {model_size/1_000_000:.1f}M parameters")
 
 ### Set up DataCollator for creating batches
 tokenizer.pad_token = tokenizer.eos_token
