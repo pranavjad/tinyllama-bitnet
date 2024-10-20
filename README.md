@@ -1,5 +1,3 @@
-Edit: this is getting stars so im adding this note. For anyone trying to replicate there are some fixes I need to push. Will try to get it done asap. Thanks.
-
 ## Tinyllama Bitnet
 This repository demonstrates training your own BitNet model based on the llama2 architecture. Unedited, the script will train a ~84M param model on ~1.5B tokens.
 #### File structure
